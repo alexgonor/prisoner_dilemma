@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+pre {
+    white-space: pre-wrap; /* Allows code to wrap */
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+button[disabled] {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
