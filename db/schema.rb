@@ -10,8 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 0) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_02_131614) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "competitions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.integer "competition_id", null: false
+    t.string "winner"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["competition_id"], name: "index_matches_on_competition_id"
+  end
+
+  create_table "strategies", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "description", null: false
+    t.text "code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "strategy_matches", force: :cascade do |t|
+    t.integer "strategy_id", null: false
+    t.integer "match_id", null: false
+    t.jsonb "moves", default: [], null: false
+    t.integer "points", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_strategy_matches_on_match_id"
+    t.index ["strategy_id"], name: "index_strategy_matches_on_strategy_id"
+  end
 end

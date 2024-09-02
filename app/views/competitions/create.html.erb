@@ -1,0 +1,18 @@
+<h1>Results</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Strategy Title</th>
+    <th>Points</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @result.each do |title, points| %>
+    <tr>
+      <td><%= title %></td>
+      <td><%= points %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
