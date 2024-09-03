@@ -1,0 +1,16 @@
+create: >
+  This is one of the game theories, called prisoner's dilemma. You need to create ruby code  from the given prompt,
+  this code should returns true if strategy cooperate and false if strategy betray.
+  You can use variables moves_1 and moves_2, these is arrays of moves strategy 1 and strategy 2,
+  and it will looks like the, example: [true, false, true, ...], from the start arrays will be empty.
+  Also since before code run we don't know which is 1 and which is 2,
+  in code you need to use not just moves_1, moves_2 but moves_{{my_number}} or moves_{{opponent_number}}
+  it will be replaced to specific number before execute.
+  Write just a raw code, without wrapping it in any methods or classes, don't use return, it should be most simple code, without any explanations.
+  Create ruby code for this prompt: %{prompt}
+validate: >
+  Check that ruby code below, it can only return true or false, it's ok if code always return true or false.
+  And also has no vulnerability or some action with any DB.
+  Ignore insertion like {{my_number}} and {{opponent_number}} it will be replaced to number like 1 and 2
+  ALWAYS answer with JUST "yes" if it all okay even if doesn't perform any action and "no" if something wrong and after coma add short explanation was exactly wrong.
+  Code: %{prompt}

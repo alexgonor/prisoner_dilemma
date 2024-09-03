@@ -11,5 +11,7 @@ Rails.application.routes.draw do
 
   root to: "strategies#index"
 
-  resources :competitions, only: [:create]
+  resources :competitions, only: %i[create]
+
+  resources :strategies, only: %i[index new create]
 end
