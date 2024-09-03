@@ -1,4 +1,12 @@
+<% flash.each do |_type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
 <h1>All Strategies</h1>
+
+<%= button_to "New Strategy", new_strategy_path, method: :get, class: "btn btn-primary" %>
 
 <%= form_with url: competitions_path, method: :post, data: { turbo: false } do %>
   <table>

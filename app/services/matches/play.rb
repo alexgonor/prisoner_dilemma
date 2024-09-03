@@ -13,7 +13,7 @@ module Matches
     end
 
     def call
-      5.times do
+      10.times do
         prepare_moves
         run_match
       end
@@ -25,8 +25,8 @@ module Matches
     private
 
     def prepare_moves
-      self.move_1 = eval(first_strategy.code)
-      self.move_2 = eval(second_strategy.code)
+      self.move_1 = eval(strategy_code(1))
+      self.move_2 = eval(strategy_code(2))
       self.moves_1 << move_1
       self.moves_2 << move_2
     end
@@ -67,6 +67,12 @@ module Matches
         end
       end
       result
+    end
+
+    def strategy_code(my_number)
+      strategy = my_number.eql?(1) ? first_strategy : second_strategy
+      opponent_number = my_number.eql?(1) ? 2 : 1
+      strategy.code.gsub("{{my_number}}", my_number.to_s).gsub("{{opponent_number}}", opponent_number.to_s)
     end
 
     def strategy_match_data
