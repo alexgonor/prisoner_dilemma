@@ -16,6 +16,10 @@ class StrategiesController < ApplicationController
     redirect_to :new
   end
 
+  def rating
+    @strategies = Strategies::Rating.call
+  end
+
   private
 
   def strategy_params

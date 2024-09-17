@@ -6,7 +6,11 @@
 
 <h1>All Strategies</h1>
 
-<%= button_to "New Strategy", new_strategy_path, method: :get, class: "btn btn-primary" %>
+<div class="button-container">
+  <%= button_to "New Strategy", new_strategy_path, method: :get, class: "btn btn-primary" %>
+
+  <%= button_to "Rating page", rating_strategies_path, method: :get, class: "btn btn-primary" %>
+</div>
 
 <%= form_with url: competitions_path, method: :post, data: { turbo: false } do %>
   <table>

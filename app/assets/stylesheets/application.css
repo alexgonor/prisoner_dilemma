@@ -39,3 +39,34 @@ button[disabled] {
     background-color: #e0e0e0;
     cursor: not-allowed;
 }
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.data-table {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.data-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.title {
+    width: 150px;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.bar {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+}
