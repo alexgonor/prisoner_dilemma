@@ -13,5 +13,9 @@ Rails.application.routes.draw do
 
   resources :competitions, only: %i[create]
 
-  resources :strategies, only: %i[index new create]
+  resources :strategies, only: %i[index new create] do
+    collection do
+      get :rating
+    end
+  end
 end

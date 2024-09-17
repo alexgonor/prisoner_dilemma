@@ -1,0 +1,12 @@
+<h1>Leader bord</h1>
+
+<div class="data-table">
+  <% @strategies.each do |item| %>
+    <div class="data-row">
+      <span class="title"><%= item[0] %></span>
+      <div class="bar" style="width: <%= item[1] %>px;"><%= item[1] %></div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Back to All Strategies", strategies_path %>
