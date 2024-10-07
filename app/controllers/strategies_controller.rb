@@ -13,7 +13,7 @@ class StrategiesController < ApplicationController
     redirect_to strategies_path, notice: "Strategy was successfully created."
   rescue StandardError => e
     flash[:alert] = e.message
-    redirect_to :new
+    redirect_to :new_strategy
   end
 
   def rating
