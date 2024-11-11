@@ -19,7 +19,7 @@ group :development, :test do
   gem "dotenv-rails"
   gem "factory_bot_rails", "~> 6.2"
   gem "pry"
-  gem "rspec-rails", "~> 7.0.0"
+  gem "rspec-rails", "~> 7.1.0"
   gem "rubocop-rails-omakase", require: false
 end
 
