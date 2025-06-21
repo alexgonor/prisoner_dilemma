@@ -1,0 +1,9 @@
+<h1>Select month and date</h1>
+
+<div id="dropdown-container">
+  <%= form_with url: calculate_puzzles_path, method: :get, local: true do |form| %>
+    <%= form.select :month, Date::MONTHNAMES.compact.each_with_index.map { |month, index| [month, index + 1] }, prompt: "Select month" %>
+    <%= form.select :date, (1..31).map { |day| [day, day] }, prompt: "select date" %>
+    <%= form.submit "Calculate" %>
+  <% end %>
+</div>

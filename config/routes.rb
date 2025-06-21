@@ -18,4 +18,11 @@ Rails.application.routes.draw do
       get :rating
     end
   end
+
+  resources :puzzles do
+    collection do
+      get :select_date
+      get :calculate
+    end
+  end
 end
