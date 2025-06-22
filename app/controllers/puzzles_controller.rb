@@ -2,7 +2,7 @@ class PuzzlesController < ApplicationController
   def select_date; end
 
   def calculate
-    Puzzles::Calculate.call(*calculate_params.values)
+    @calendar_image = CalendarImage.find_by(date: "2025-#{params[:month]}-#{params[:date]}")
   end
 
   private

@@ -1,0 +1,5 @@
+<p><strong>Date:</strong> <%= @calendar_image.date.strftime("%d %B") %></p>
+
+<%= image_tag @calendar_image.image.variant(resize_to_limit: [500, 500]) %>
+<br>
+<%= link_to "Select new date", select_date_puzzles_path %>
